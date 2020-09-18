@@ -1,0 +1,2 @@
+"use strict";exports.__esModule=true;exports.searchParamsToUrlQuery=searchParamsToUrlQuery;function searchParamsToUrlQuery(searchParams){const query={};searchParams.forEach((value,key)=>{if(typeof query[key]==='undefined'){query[key]=value;}else if(Array.isArray(query[key])){;query[key].push(value);}else{query[key]=[query[key],value];}});return query;}
+//# sourceMappingURL=search-params-to-url-query.js.map

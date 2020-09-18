@@ -1,0 +1,118 @@
+{
+	"name": "ow",
+	"version": "0.15.1",
+	"description": "Function argument validation for humans",
+	"license": "MIT",
+	"repository": "sindresorhus/ow",
+	"funding": "https://github.com/sponsors/sindresorhus",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "sindresorhus.com"
+	},
+	"main": "dist/source",
+	"engines": {
+		"node": ">=8"
+	},
+	"scripts": {
+		"prepublishOnly": "npm run build",
+		"pretest": "npm run compile -- --sourceMap",
+		"test": "xo && nyc ava",
+		"build": "npm run clean && webpack",
+		"compile": "npm run clean && tsc",
+		"clean": "del-cli dist",
+		"docs": "typedoc source"
+	},
+	"files": [
+		"dist/source",
+		"dev-only.js"
+	],
+	"keywords": [
+		"type",
+		"types",
+		"check",
+		"checking",
+		"guard",
+		"guards",
+		"assert",
+		"assertion",
+		"predicate",
+		"predicates",
+		"is",
+		"validate",
+		"validation",
+		"utility",
+		"util",
+		"typeof",
+		"instanceof",
+		"object"
+	],
+	"dependencies": {
+		"type-fest": "^0.8.1"
+	},
+	"devDependencies": {
+		"@sindresorhus/is": "^1.2.0",
+		"@sindresorhus/tsconfig": "^0.5.0",
+		"@types/lodash.isequal": "^4.5.2",
+		"@types/node": "^12.12.6",
+		"@types/vali-date": "^1.0.0",
+		"@typescript-eslint/eslint-plugin": "^2.6.1",
+		"@typescript-eslint/parser": "^2.6.1",
+		"add-module-exports-webpack-plugin": "^1.0.0",
+		"ava": "^2.0.0",
+		"awesome-typescript-loader": "^5.2.1",
+		"callsites": "^3.0.0",
+		"codecov": "^3.1.0",
+		"del-cli": "^2.0.0",
+		"dot-prop": "^5.2.0",
+		"eslint-config-xo-typescript": "^0.21.0",
+		"license-webpack-plugin": "^2.0.2",
+		"lodash.isequal": "^4.5.0",
+		"nyc": "^14.1.1",
+		"typedoc": "^0.15.0",
+		"typescript": "^3.7.2",
+		"vali-date": "^1.0.0",
+		"webpack": "^4.33.0",
+		"webpack-cli": "^3.3.10",
+		"xo": "^0.25.3"
+	},
+	"browser": {
+		"./dist/source/utils/infer-label.js": "./dist/source/utils/infer-label.browser.js"
+	},
+	"types": "dist/source",
+	"sideEffects": false,
+	"xo": {
+		"extends": "xo-typescript",
+		"extensions": [
+			"ts"
+		],
+		"ignores": [
+			"example.js",
+			"webpack.config.js",
+			"dev-only.js"
+		],
+		"rules": {
+			"no-useless-return": "off",
+			"@typescript-eslint/generic-type-naming": "off",
+			"@typescript-eslint/member-naming": "off",
+			"ava/no-ignored-test-files": "off",
+			"@typescript-eslint/explicit-function-return-type": "off",
+			"@typescript-eslint/ban-types": "off",
+			"@typescript-eslint/no-explicit-any": "off",
+			"@typescript-eslint/no-empty-function": "off"
+		}
+	},
+	"ava": {
+		"babel": false,
+		"compileEnhancements": false,
+		"files": [
+			"dist/test/**",
+			"!dist/test/fixtures/**"
+		]
+	},
+	"nyc": {
+		"exclude": [
+			"dist/test"
+		]
+	}
+}
