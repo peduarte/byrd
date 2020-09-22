@@ -1,45 +1,98 @@
 import React from 'react';
-import { theme } from '../stitches.config';
+import { theme, styled } from '../stitches.config';
 import { Box } from '../components/Box';
 import { Flex } from '../components/Flex';
 import { Grid } from '../components/Grid';
 import { Text } from '../components/Text';
 import { Link } from '../components/Link';
-import { Code } from '../components/Code';
+import { Container } from '../components/Container';
+
+const Section = (props) => <Container size={{ bp1: '1', bp2: '2', bp3: '3' }} {...props} />;
 
 function Home() {
   return (
     <Box>
-      <Box
+      <Section
         css={{
-          px: '16vw',
-          py: '16vh',
-          height: '50vh',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          height: '100vh',
+
+          bp1: {
+            minHeight: '512px',
+            height: '50vh',
+          },
         }}
       >
         <Text as="h1" size="6" weight="bold">
-          Byrd.
+          byrd.
         </Text>
 
-        <Text as="h1" size="4" weight="medium" css={{ mt: '$6' }}>
-          The personal design system
-          <br />
-          of <Link href="https://ped.ro">ped.ro</Link> and his projects.
+        <Text
+          as="h1"
+          size="4"
+          weight="medium"
+          css={{
+            mt: '$5',
+            maxWidth: '320px',
+          }}
+        >
+          The personal design system of <Link href="https://ped.ro">ped.ro</Link> and his side
+          projects.
         </Text>
-      </Box>
+      </Section>
 
       <Grid
         css={{
-          height: '50vh',
-          gridTemplateColumns: 'repeat(2, 50vw)',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          height: '100vh',
+          gridTemplateColumns: 'repeat(3, 1fr)',
+          gap: '1px',
+
+          bp1: {
+            minHeight: '512px',
+            height: '50vh',
+          },
+
+          bp2: {
+            gridTemplateColumns: 'repeat(3, 1fr)',
+          },
         }}
       >
-        {['$pink', '$blue', '$turq', '$yellow', '$orange', '$red'].map((color) => (
+        {[
+          '$pink',
+          '$pink',
+          '$pink',
+
+          '$blue',
+          '$blue',
+          '$blue',
+
+          '$turq',
+          '$turq',
+          '$turq',
+
+          '$yellow',
+          '$yellow',
+          '$yellow',
+
+          '$orange',
+          '$orange',
+          '$orange',
+
+          '$red',
+          '$red',
+          '$red',
+        ].map((color, i) => (
           <Box
-            key={color}
+            key={`${color}${i}`}
             css={{
               bc: color,
-              padding: '$4',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
               '&:hover > *': { opacity: '1' },
             }}
           >
@@ -50,12 +103,11 @@ function Home() {
         ))}
       </Grid>
 
-      <Box
+      <Section
         css={{
-          bc: '$black',
           position: 'relative',
-          px: '16vw',
-          py: '16vh',
+          pt: '$6',
+          pb: '$7',
         }}
       >
         <Box>
@@ -67,22 +119,16 @@ function Home() {
           <Space height="$6" />
           <Space height="$7" />
           <Space height="$8" />
-          <Box css={{ height: '1px', bc: '$white' }} />
         </Box>
-      </Box>
+      </Section>
 
-      <Box
-        css={{
-          px: '8vw',
-          py: '8vh',
-        }}
-      >
-        <Box
+      <Container css={{ mb: '$4' }}>
+        <Container
+          size={{ bp2: '2' }}
           css={{
             bc: '$pink',
-            px: '8vw',
             py: '8vh',
-            mt: '-16vh',
+            mt: '-$6',
             position: 'relative',
           }}
         >
@@ -110,12 +156,14 @@ function Home() {
                   },
                 }}
               >
-                <Text>{letter}</Text>
+                <Text weight="semibold" size={{ bp1: '4', bp2: '7', bp3: '8' }}>
+                  {letter}
+                </Text>
               </Box>
             ))}
           </Grid>
-        </Box>
-      </Box>
+        </Container>
+      </Container>
 
       <Box
         css={{
@@ -241,6 +289,7 @@ const Space = (props) => (
     <Box
       css={{
         borderTop: '1px solid $white',
+        bc: '$black',
         boxSizing: 'content-box',
         height: props.height,
         flex: '1',
