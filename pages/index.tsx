@@ -228,13 +228,15 @@ const Space = (props) => (
     <Text
       size="1"
       css={{
-        width: '20px',
-        ml: '-20px',
+        width: '85px',
+        ml: '-85px',
         color: '$gray',
         opacity: 0,
+        fontFamily: '$mono',
+        whiteSpace: 'nowrap',
       }}
     >
-      {props.height}
+      token: {props.height}
     </Text>
     <Box
       css={{
