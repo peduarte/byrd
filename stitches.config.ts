@@ -29,7 +29,7 @@ export const theme = {
     $9: '72px',
   },
   lineHeights: {
-    $1: '18px',
+    $1: '16px',
     $2: '21px',
     $3: '24px',
     $4: '30px',
