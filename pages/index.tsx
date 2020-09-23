@@ -1,5 +1,5 @@
 import React from 'react';
-import { theme, styled } from '../stitches.config';
+import { theme, styled, css } from '../stitches.config';
 import { Box } from '../components/Box';
 import { Flex } from '../components/Flex';
 import { Grid } from '../components/Grid';
@@ -110,7 +110,14 @@ function Home() {
           pb: '$7',
         }}
       >
-        <Box>
+        <Box
+          css={{
+            bp2: {
+              width: '50vw',
+              mx: 'auto',
+            },
+          }}
+        >
           <Space height="$1" />
           <Space height="$2" />
           <Space height="$3" />
@@ -122,147 +129,65 @@ function Home() {
         </Box>
       </Section>
 
-      <Container css={{ mb: '$4' }}>
-        <Container
-          size={{ bp2: '2' }}
-          css={{
-            bc: '$pink',
-            py: '8vh',
-            mt: '-$6',
-            position: 'relative',
-          }}
-        >
-          <Grid
-            css={{
-              gridTemplateColumns: 'repeat(9, 1fr)',
-              gap: '1px',
-              backgroundColor: '$black',
-              border: '1px solid $black',
-            }}
-          >
-            {'abcdefghijklmnopqrstuvwxyz '.split('').map((letter) => (
-              <Box
-                key={letter}
-                css={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  bc: '$pink',
-                  overflow: 'hidden',
-                  '&::before': {
-                    content: '""',
-                    paddingTop: '100%',
-                    float: 'left',
-                  },
-                }}
-              >
-                <Text weight="semibold" size={{ bp1: '4', bp2: '7', bp3: '8' }}>
-                  {letter}
-                </Text>
-              </Box>
-            ))}
-          </Grid>
-        </Container>
-      </Container>
-
       <Box
         css={{
-          bc: '$turq',
-          px: '16vw',
-          py: '16vh',
-          height: '100vh',
+          bc: '$black',
+          p: '$4',
+          bp1: {
+            p: '$5',
+          },
         }}
       >
         <Box
           css={{
-            mb: '$4',
+            bc: '$pink',
+            mt: '-$5',
             bp1: {
-              display: 'flex',
-              alignItems: 'center',
+              mt: '-$6',
+            },
+            bp2: {
+              mt: '-$6',
             },
           }}
         >
-          <Box css={{ mr: '$3', whiteSpace: 'nowrap' }}>
-            <Text size="1" css={{ mr: '$4', bp1: { display: 'block' } }}>
-              Inter
-            </Text>
-            <Text size="1" css={{ mr: '$4', bp1: { display: 'block' } }}>
-              weight: regular
-            </Text>
-          </Box>
-          <Text as="div" size="6" weight="regular">
-            No need to worry 'bout tomorrow, and yesterday is gone.
-          </Text>
-        </Box>
-        <Box
-          css={{
-            mb: '$4',
-            bp1: {
-              display: 'flex',
-              alignItems: 'center',
-            },
-          }}
-        >
-          <Box css={{ mr: '$3', whiteSpace: 'nowrap' }}>
-            <Text size="1" css={{ mr: '$4', bp1: { display: 'block' } }}>
-              Inter
-            </Text>
-            <Text size="1" css={{ mr: '$4', bp1: { display: 'block' } }}>
-              weight: medium
-            </Text>
-          </Box>
-          <Text as="div" size="6" weight="medium">
-            No need to worry 'bout tomorrow, and yesterday is gone.
-          </Text>
-        </Box>
-        <Box
-          css={{
-            mb: '$4',
-            bp1: {
-              display: 'flex',
-              alignItems: 'center',
-            },
-          }}
-        >
-          <Box css={{ mr: '$3', whiteSpace: 'nowrap' }}>
-            <Text size="1" css={{ mr: '$4', bp1: { display: 'block' } }}>
-              Inter
-            </Text>
-            <Text size="1" css={{ mr: '$4', bp1: { display: 'block' } }}>
-              weight: semibold
-            </Text>
-          </Box>
-          <Text as="div" size="6" weight="semibold">
-            No need to worry 'bout tomorrow, and yesterday is gone.
-          </Text>
-        </Box>
-        <Box
-          css={{
-            mb: '$4',
-            bp1: {
-              display: 'flex',
-              alignItems: 'center',
-            },
-          }}
-        >
-          <Box css={{ mr: '$3', whiteSpace: 'nowrap' }}>
-            <Text size="1" css={{ mr: '$4', bp1: { display: 'block' } }}>
-              Inter
-            </Text>
-            <Text size="1" css={{ mr: '$4', bp1: { display: 'block' } }}>
-              weight: bold
-            </Text>
-          </Box>
-          <Text as="div" size="6" weight="bold">
-            No need to worry 'bout tomorrow, and yesterday is gone.
-          </Text>
+          <Alphabet />
         </Box>
       </Box>
+
+      <Section
+        css={{
+          bc: '$turq',
+          py: '$6',
+          overflow: 'hidden',
+        }}
+      >
+        <FontSize size="1" />
+        <FontSize size="2" />
+        <FontSize size="3" />
+        <FontSize size="4" />
+        <FontSize size="5" />
+        <FontSize size="6" />
+      </Section>
     </Box>
   );
 }
 
 export default Home;
+
+const FontSize = (props) => (
+  <Flex
+    css={{
+      mb: '$4',
+      '&:hover > *': { opacity: '1' },
+      justifyContent: 'flex-start',
+      alignItems: 'center',
+    }}
+  >
+    <Text size={props.size} weight="regular" css={{ whiteSpace: 'nowrap' }}>
+      No need to worry 'bout tomorrow, and yesterday is gone.
+    </Text>
+  </Flex>
+);
 
 const Space = (props) => (
   <Flex
@@ -297,3 +222,112 @@ const Space = (props) => (
     ></Box>
   </Flex>
 );
+
+const Alphabet = () => {
+  const shuffledIndices = Array.from({ length: 30 }, (_, i) => i).sort(function () {
+    return 0.5 - Math.random();
+  });
+
+  return (
+    <Grid
+      css={{
+        gridTemplateColumns: 'repeat(5, 1fr)',
+        gap: '1px',
+        backgroundColor: '$black',
+        border: '1px solid $black',
+
+        bp2: {
+          gridTemplateColumns: 'repeat(10, 1fr)',
+        },
+      }}
+    >
+      {shuffledIndices.map((i) => (
+        <LetterBox key={`${i}`} index={i} />
+      ))}
+    </Grid>
+  );
+};
+
+const LetterBox = (props) => {
+  const letters = [
+    'abcdefghijklmnopqrstuvwxyz',
+    'abcdefghijklmnopqrstuvwxyz'.toUpperCase(),
+    '1234567890',
+    '!@#$%^&*(){}<>+:;-=+~/',
+  ].join();
+
+  const getRadomLetter = () => letters[Math.floor(Math.random() * letters.length)];
+  const weights = ['regular', 'medium', 'semibold', 'bold'];
+  const families = ['$sans', '$mono'];
+
+  const [letter, setLetter] = React.useState(getRadomLetter());
+  const [weightIndex, setWeightIndex] = React.useState(0);
+  const [familyIndex, setFamilyIndex] = React.useState(0);
+
+  React.useEffect(() => {
+    let intervalId;
+    setTimeout(() => {
+      setLetter(getRadomLetter());
+      setWeightIndex(Math.floor(Math.random() * weights.length));
+      setFamilyIndex((currentIndex) =>
+        currentIndex === families.length - 1 ? 0 : currentIndex + 1
+      );
+      intervalId = setInterval(() => {
+        setLetter(getRadomLetter());
+        setWeightIndex(Math.floor(Math.random() * weights.length));
+        setFamilyIndex((currentIndex) =>
+          currentIndex === families.length - 1 ? 0 : currentIndex + 1
+        );
+      }, 4500);
+    }, props.index * 150);
+    return () => clearInterval(intervalId);
+  }, []);
+
+  return (
+    <Box
+      key={Math.random()}
+      css={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        bc: '$pink',
+        overflow: 'hidden',
+
+        '&::before': {
+          content: '""',
+          paddingTop: '100%',
+          float: 'left',
+        },
+      }}
+    >
+      <Letter
+        weight={weights[weightIndex] as any}
+        size={{
+          initial: '4',
+          bp2: '6',
+          bp3: '7',
+        }}
+        css={{
+          fontFamily: families[familyIndex],
+        }}
+      >
+        {letter}
+      </Letter>
+    </Box>
+  );
+};
+
+const showLetter = css.keyframes({
+  '0%': {
+    transform: 'scale(0.5)',
+  },
+
+  '100%': {
+    transform: 'scale(1)',
+  },
+});
+
+const Letter = styled(Text, {
+  userSelect: 'none',
+  animation: `${showLetter} 800ms cubic-bezier(0.16, 1, 0.3, 1) both`,
+});
