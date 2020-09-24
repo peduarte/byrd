@@ -5,6 +5,7 @@ export const Text = styled('span', {
   margin: 0,
   fontWeight: 400,
   fontFamily: '$sans',
+  color: '$loContrast',
 
   variants: {
     weight: {

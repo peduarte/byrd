@@ -3,35 +3,19 @@ import { createStyled } from '@stitches/react';
 export const theme = {
   breakpoints: ['575px', '750px', '1000px', '1200px'],
   colors: {
+    $loContrast: 'hsl(240, 5%, 8%)',
+    $hiContrast: 'hsl(0, 100%, 100%)',
+
     $black: 'hsl(240, 5%, 8%)',
     $white: 'hsl(0, 100%, 100%)',
     $gray: 'hsl(0, 0%, 50%)',
-    $blue: 'hsl(208, 98%, 50%)',
-    $red: 'hsl(345, 95%, 52%)',
-    $yellow: 'hsl(52, 100%, 50%)',
+
     $pink: 'hsl(345, 66%, 73%)',
-
-    // $pink100: 'hsl(345,100%,98%)',
-    // $pink200: 'hsl(345,94%,97%)',
-    // $pink300: 'hsl(345,90%,91%)',
-    // $pink400: 'hsl(345,90%,85%)',
-    // $pink500: 'hsl(345,100%,85%)',
-    // $pink600: 'hsl(345,79%,76%)',
-    // $pink700: 'hsl(345,80%,70%)',
-    // $pink800: 'hsl(345,83%,65%)',
-    // $pink900: 'hsl(345,83%,55%)',
-    // $pink100: 'hsl(345,100%,99%)',
-    // $pink200: 'hsl(345,100%,97%)',
-    // $pink300: 'hsl(345,100%,96%)',
-    // $pink400: 'hsl(345,100%,93%)',
-    // $pink500: 'hsl(345,78%,85%)',
-    // $pink600: 'hsl(345,80%,75%)',
-    // $pink700: 'hsl(345,68%,70%)',
-    // $pink800: 'hsl(345,62%,47%)',
-    // $pink900: 'hsl(345,62%,44%)',
-
+    $blue: 'hsl(208, 98%, 50%)',
     $turq: 'hsl(168, 100%, 48%)',
+    $yellow: 'hsl(52, 100%, 50%)',
     $orange: 'hsl(28, 100%, 56%)',
+    $red: 'hsl(345, 95%, 52%)',
   },
   fonts: {
     $sans: 'Inter,sans-serif',
@@ -151,3 +135,10 @@ export const { styled, css } = createStyled({
     }),
   },
 });
+
+export const darkTheme = {
+  $loContrast: 'hsl(0, 100%, 100%)',
+  $hiContrast: 'hsl(240, 5%, 8%)',
+};
+
+export const darkThemeClass = css.theme({ colors: darkTheme });

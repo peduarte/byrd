@@ -17,11 +17,11 @@ function Home() {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
-          height: '100vh',
+          height: '99vh',
 
           bp1: {
             minHeight: '512px',
-            height: '50vh',
+            height: '99vh',
           },
         }}
       >
@@ -45,61 +45,13 @@ function Home() {
 
       <Grid
         css={{
-          flexDirection: 'column',
-          justifyContent: 'center',
-          height: '100vh',
-          gridTemplateColumns: 'repeat(3, 1fr)',
           gap: '1px',
-
-          bp1: {
-            minHeight: '512px',
-            height: '50vh',
-          },
-
-          bp2: {
-            gridTemplateColumns: 'repeat(3, 1fr)',
-          },
+          height: '100vh',
+          gridTemplateColumns: 'repeat(6, 1fr)',
         }}
       >
-        {[
-          '$pink',
-          '$pink',
-          '$pink',
-
-          '$blue',
-          '$blue',
-          '$blue',
-
-          '$turq',
-          '$turq',
-          '$turq',
-
-          '$yellow',
-          '$yellow',
-          '$yellow',
-
-          '$orange',
-          '$orange',
-          '$orange',
-
-          '$red',
-          '$red',
-          '$red',
-        ].map((color, i) => (
-          <Box
-            key={`${color}${i}`}
-            css={{
-              bc: color,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              '&:hover > *': { opacity: '1' },
-            }}
-          >
-            <Text as="div" size="1" css={{ fontFamily: '$mono', opacity: 0 }}>
-              token: {color}
-            </Text>
-          </Box>
+        {['$pink', '$blue', '$turq', '$yellow', '$orange', '$red'].map((color, i) => (
+          <Box key={`${color}${i}`} css={{ bc: color }} />
         ))}
       </Grid>
 
@@ -131,7 +83,7 @@ function Home() {
 
       <Box
         css={{
-          bc: '$black',
+          bc: '$loContrast',
           p: '$4',
           bp1: {
             p: '$5',
@@ -154,67 +106,124 @@ function Home() {
         </Box>
       </Box>
 
-      <Section
-        css={{
-          bc: '$turq',
-          py: '$6',
-          overflow: 'hidden',
-        }}
-      >
-        <FontSize size="1" />
-        <FontSize size="2" />
-        <FontSize size="3" />
-        <FontSize size="4" />
-        <FontSize size="5" />
-        <FontSize size="6" />
-      </Section>
+      <Flex>
+        <Box
+          css={{
+            bc: '$turq',
+            width: '50vw',
+          }}
+        >
+          <Flex
+            css={{
+              height: '100%',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              padding: '$5',
+              overflow: 'hidden',
+            }}
+          >
+            <Text size="9" css={{ whiteSpace: 'nowrap' }}>
+              System 400
+            </Text>
+            <Text size="9" weight="medium" css={{ whiteSpace: 'nowrap' }}>
+              System 500
+            </Text>
+            <Text size="9" weight="semibold" css={{ whiteSpace: 'nowrap' }}>
+              System 700
+            </Text>
+            <Text size="9" weight="bold" css={{ whiteSpace: 'nowrap' }}>
+              System 800
+            </Text>
+            <Text size="9" weight="bold" css={{ whiteSpace: 'nowrap', fontFamily: '$mono' }}>
+              Fira Code 400
+            </Text>
+          </Flex>
+        </Box>
+        <Box
+          css={{
+            width: '50vw',
+            pt: '1px',
+            overflow: 'hidden',
+            bc: '$turq',
+          }}
+        >
+          <FontSize size="1">
+            Places and spaces I've been. Oh the places and spaces I've been. Down on the west-side.
+            Where all the girls hide. All you have to do is east-side. What you gonna buy?
+          </FontSize>
+          <FontSize size="2">
+            So come fly with me Cause we're flying high Flying high to the sky Flying high through
+            the sky Flying is our game It's like a high Soaring through the Clouds in the sky
+          </FontSize>
+          <FontSize size="3">
+            Places and spaces I've been. Oh the places and spaces I've been. Down on the west-side.
+            Where all the girls hide. All you have to do is east-side. What you gonna buy?
+          </FontSize>
+          <FontSize size="4">
+            Places and spaces I've been. Oh the places and spaces I've been. Down on the west-side.
+            Where all the girls hide. All you have to do is east-side. What you gonna buy?
+          </FontSize>
+          <FontSize size="5">
+            Places and spaces I've been. Oh the places and spaces I've been. Down on the west-side.
+            Where all the girls hide. All you have to do is east-side. What you gonna buy?
+          </FontSize>
+          <FontSize size="6">
+            Places and spaces I've been. Oh the places and spaces I've been. Down on the west-side.
+            Where all the girls hide. All you have to do is east-side. What you gonna buy?
+          </FontSize>
+          <FontSize size="7">
+            Places and spaces I've been. Oh the places and spaces I've been. Down on the west-side.
+            Where all the girls hide. All you have to do is east-side. What you gonna buy?
+          </FontSize>
+          <FontSize size="8">
+            Places and spaces I've been. Oh the places and spaces I've been. Down on the west-side.
+            Where all the girls hide. All you have to do is east-side. What you gonna buy?
+          </FontSize>
+        </Box>
+      </Flex>
     </Box>
   );
 }
 
 export default Home;
 
-const FontSize = (props) => (
-  <Flex
-    css={{
-      mb: '$4',
-      '&:hover > *': { opacity: '1' },
-      justifyContent: 'flex-start',
-      alignItems: 'center',
-    }}
-  >
-    <Text size={props.size} weight="regular" css={{ whiteSpace: 'nowrap' }}>
-      No need to worry 'bout tomorrow, and yesterday is gone.
-    </Text>
-  </Flex>
+const FontSize = ({ children, ...props }) => (
+  <Box css={{ bc: '$hiContrast', mb: '1px', pl: '$4' }}>
+    <Box
+      css={{
+        textAlign: 'center',
+      }}
+    >
+      <Text
+        as="div"
+        size={props.size}
+        weight="regular"
+        css={{
+          py: 'clamp(32px, 2em, 48px)',
+          fontFamily: props.family,
+          whiteSpace: 'nowrap',
+        }}
+      >
+        {children}
+        {Array.from({ length: 10 }, () => (
+          <span aria-hidden> {children} </span>
+        ))}
+      </Text>
+    </Box>
+  </Box>
 );
 
 const Space = (props) => (
   <Flex
     css={{
-      alignItems: 'center',
       height: props.height,
       ...props.css,
-      '&:hover > *': { opacity: '1' },
     }}
   >
-    <Text
-      size="1"
-      css={{
-        width: '85px',
-        ml: '-85px',
-        color: '$gray',
-        opacity: 0,
-        fontFamily: '$mono',
-        whiteSpace: 'nowrap',
-      }}
-    >
-      token: {props.height}
-    </Text>
     <Box
       css={{
-        borderTop: '1px solid $white',
-        bc: '$black',
+        borderTop: '1px solid $hiContrast',
+        bc: '$loContrast',
         boxSizing: 'content-box',
         height: props.height,
         flex: '1',
@@ -233,8 +242,8 @@ const Alphabet = () => {
       css={{
         gridTemplateColumns: 'repeat(5, 1fr)',
         gap: '1px',
-        backgroundColor: '$black',
-        border: '1px solid $black',
+        backgroundColor: '$loContrast',
+        border: '1px solid $loContrast',
 
         bp2: {
           gridTemplateColumns: 'repeat(10, 1fr)',
@@ -319,7 +328,7 @@ const LetterBox = (props) => {
 
 const showLetter = css.keyframes({
   '0%': {
-    transform: 'scale(0.5)',
+    transform: 'scale(0.4)',
   },
 
   '100%': {
@@ -329,5 +338,6 @@ const showLetter = css.keyframes({
 
 const Letter = styled(Text, {
   userSelect: 'none',
-  animation: `${showLetter} 800ms cubic-bezier(0.16, 1, 0.3, 1) both`,
+  animation: `${showLetter} 850ms cubic-bezier(0.16, 1, 0.3, 1) both`,
+  color: '$black',
 });
