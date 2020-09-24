@@ -122,19 +122,23 @@ function Home() {
               overflow: 'hidden',
             }}
           >
-            <Text size="9" css={{ whiteSpace: 'nowrap' }}>
+            <Text size="9" css={{ color: '$black', whiteSpace: 'nowrap' }}>
               System 400
             </Text>
-            <Text size="9" weight="medium" css={{ whiteSpace: 'nowrap' }}>
+            <Text size="9" weight="medium" css={{ color: '$black', whiteSpace: 'nowrap' }}>
               System 500
             </Text>
-            <Text size="9" weight="semibold" css={{ whiteSpace: 'nowrap' }}>
+            <Text size="9" weight="semibold" css={{ color: '$black', whiteSpace: 'nowrap' }}>
               System 700
             </Text>
-            <Text size="9" weight="bold" css={{ whiteSpace: 'nowrap' }}>
+            <Text size="9" weight="bold" css={{ color: '$black', whiteSpace: 'nowrap' }}>
               System 800
             </Text>
-            <Text size="9" weight="bold" css={{ whiteSpace: 'nowrap', fontFamily: '$mono' }}>
+            <Text
+              size="9"
+              weight="bold"
+              css={{ color: '$black', whiteSpace: 'nowrap', fontFamily: '$mono' }}
+            >
               Fira Code 400
             </Text>
           </Flex>
