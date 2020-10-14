@@ -27,8 +27,8 @@ export const Badge = styled.span({
   },
 
   // Custom
-  backgroundColor: '$gray200',
-  borderRadius: '$pill',
+  backgroundColor: '$gray',
+  borderRadius: '$round',
   color: '$gray600',
   height: '$3',
   px: '$1',
@@ -45,20 +45,20 @@ export const Badge = styled.span({
     },
     variant: {
       blue: {
-        backgroundColor: '$blue200',
-        color: '$blue600',
+        backgroundColor: '$blue',
+        color: '$white',
       },
       green: {
-        backgroundColor: '$green200',
-        color: '$green600',
+        backgroundColor: '$turq',
+        color: '$black',
       },
       red: {
-        backgroundColor: '$red200',
-        color: '$red600',
+        backgroundColor: '$red',
+        color: '$white',
       },
       yellow: {
-        backgroundColor: '$yellow200',
-        color: '$yellow600',
+        backgroundColor: '$yellow',
+        color: '$black',
       },
     },
   },

@@ -1,11 +1,17 @@
 import React from 'react';
 import { theme, styled, css } from '../stitches.config';
+import { Badge } from '../components/Badge';
 import { Box } from '../components/Box';
+import { Card } from '../components/Card';
+import { Code } from '../components/Code';
+import { Container } from '../components/Container';
+import { Divider } from '../components/Divider';
 import { Flex } from '../components/Flex';
 import { Grid } from '../components/Grid';
-import { Text } from '../components/Text';
+import { Image } from '../components/Image';
+import { Input } from '../components/Input';
 import { Link } from '../components/Link';
-import { Container } from '../components/Container';
+import { Text } from '../components/Text';
 import Marquee from 'react-double-marquee';
 
 const Section = (props) => <Container size={{ bp1: '1', bp2: '2', bp3: '3' }} {...props} />;
@@ -46,15 +52,245 @@ function Home() {
 
       <Grid
         css={{
-          gap: '1px',
           height: '100vh',
-          // gridTemplateColumns: 'repeat(6, 1fr)',
+          gridAutoFlow: 'column',
         }}
       >
         {['$pink', '$blue', '$turq', '$yellow', '$orange', '$red'].map((color, i) => (
           <Box key={`${color}${i}`} css={{ bc: color }} />
         ))}
       </Grid>
+
+      <Section>
+        <Grid
+          css={{
+            alignItems: 'start',
+            justifyContent: 'start',
+            gridAutoFlow: 'column',
+            gap: '$2',
+          }}
+        >
+          <Badge>Funky</Badge>
+          <Badge variant="blue">Funky</Badge>
+          <Badge variant="green">Funky</Badge>
+          <Badge variant="red">Funky</Badge>
+          <Badge variant="yellow">Funky</Badge>
+        </Grid>
+      </Section>
+
+      <Section
+        css={{
+          position: 'relative',
+          height: '1600px',
+        }}
+      >
+        <Text
+          as="h3"
+          size="7"
+          weight="bold"
+          css={{
+            position: 'absolute',
+            top: '7%',
+            left: '75%',
+          }}
+        >
+          Inspired by jazz
+        </Text>
+        {/* To-do: optimise the images */}
+        <Image
+          src="/images/moanin.jpg"
+          css={{
+            position: 'absolute',
+            top: '56%',
+            left: '37%',
+            width: '400px',
+            height: '400px',
+            objectFit: 'contain',
+          }}
+        />
+        <Image
+          src="/images/stepping-into-tomorrow.jpg"
+          css={{
+            position: 'absolute',
+            top: '14%',
+            left: '32%',
+            width: '400px',
+            height: '400px',
+            objectFit: 'contain',
+          }}
+        />
+        <Image
+          src="/images/time-out.jpg"
+          css={{
+            position: 'absolute',
+            top: '48%',
+            left: '9%',
+            width: '400px',
+            height: '400px',
+            objectFit: 'contain',
+          }}
+        />
+        <Image
+          src="/images/thrust.jpg"
+          css={{
+            position: 'absolute',
+            top: '28%',
+            left: '19%',
+            width: '400px',
+            height: '400px',
+            objectFit: 'contain',
+          }}
+        />
+        <Image
+          src="/images/the-black-saint.jpg"
+          css={{
+            position: 'absolute',
+            top: '62%',
+            left: '21%',
+            width: '400px',
+            height: '400px',
+            objectFit: 'contain',
+          }}
+        />
+        <Image
+          src="/images/a-new-perspective.jpg"
+          css={{
+            position: 'absolute',
+            top: '33%',
+            left: '35%',
+            width: '400px',
+            height: '400px',
+            objectFit: 'contain',
+          }}
+        />
+        <Image
+          src="/images/mingus-ah-um.jpg"
+          css={{
+            position: 'absolute',
+            top: '24%',
+            left: '58%',
+            width: '400px',
+            height: '400px',
+            objectFit: 'contain',
+          }}
+        />
+        <Image
+          src="/images/true-blue.jpg"
+          css={{
+            position: 'absolute',
+            top: '39%',
+            left: '62%',
+            width: '400px',
+            height: '400px',
+            objectFit: 'contain',
+          }}
+        />
+        <Image
+          src="/images/sketches-of-spain.jpg"
+          css={{
+            position: 'absolute',
+            top: '37%',
+            left: '50%',
+            width: '400px',
+            height: '400px',
+            objectFit: 'contain',
+          }}
+        />
+        <Image
+          src="/images/solo-monk.jpg"
+          css={{
+            position: 'absolute',
+            top: '20%',
+            left: '47%',
+            width: '400px',
+            height: '400px',
+            objectFit: 'contain',
+          }}
+        />
+        <Image
+          src="/images/winter-in-america.jpg"
+          css={{
+            position: 'absolute',
+            top: '62%',
+            left: '61%',
+            width: '400px',
+            height: '400px',
+            objectFit: 'contain',
+          }}
+        />
+        <Image
+          src="/images/bitches-brew.jpg"
+          css={{
+            position: 'absolute',
+            top: '59%',
+            left: '53%',
+            width: '400px',
+            height: '400px',
+            objectFit: 'contain',
+          }}
+        />
+        <Image
+          src="/images/head-hunters.jpg"
+          css={{
+            position: 'absolute',
+            top: '51%',
+            left: '25%',
+            width: '400px',
+            height: '400px',
+            objectFit: 'contain',
+          }}
+        />
+      </Section>
+
+      <Section>
+        <Grid
+          css={{
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gap: '$4',
+          }}
+        >
+          <Card>
+            <Text size="3">
+              Inspired by Chris Biscardi, Joel Hooks, Shawn Wang, and others, I, too, wanted to
+              dynamically generate social images for my blog posts. But the thought of creating an
+              image generation API was daunting to me. Cloudinary, Lambdas, Chromium are cool, but I
+              wanted something more straightforward. It was around this time that Marina introduced
+              me to Microlink and its creator Kiko. Microlink was just about to release their new
+              product, Microlink Cards. Being one of the alpha testers of Microlink Cards, I decided
+              to take it for a spin and rely on it to generate the social images for me.
+            </Text>
+          </Card>
+          <Card>
+            <Text size="3">
+              New in macOS Big Sur 11 beta, the system ships with a built-in dynamic linker cache of
+              all system-provided libraries. As part of this change, copies of dynamic libraries are
+              no longer present on the filesystem. Code that attempts to check for dynamic library
+              presence by looking for a file at a path or enumerating a directory will fail.
+              Instead, check for library presence by attempting to dlopen() the path, which will
+              correctly check for the library in the cache. (62986286)
+            </Text>
+          </Card>
+          <Card>
+            <Text size="3">
+              Inspired by Chris Biscardi, Joel Hooks, Shawn Wang, and others, I, too, wanted to
+              dynamically generate social images for my blog posts. But the thought of creating an
+              image generation API was daunting to me. Cloudinary, Lambdas, Chromium are cool, but I
+              wanted something more straightforward. It was around this time that Marina introduced
+              me to Microlink and its creator Kiko. Microlink was just about to release their new
+              product, Microlink Cards. Being one of the alpha testers of Microlink Cards, I decided
+              to take it for a spin and rely on it to generate the social images for me.
+            </Text>
+          </Card>
+        </Grid>
+      </Section>
+
+      <Section>
+        <Divider />
+      </Section>
+
+      <Section>
+        <Input placeholder="yo" />
+      </Section>
 
       <Section
         css={{
@@ -84,7 +320,7 @@ function Home() {
 
       <Box
         css={{
-          bc: '$loContrast',
+          bc: '$hiContrast',
           p: '$4',
           bp1: {
             p: '$5',
@@ -149,7 +385,7 @@ function Home() {
                 bp3: { marginBottom: 0 },
               }}
             >
-              System 400
+              Usual 400
             </Text>
             <Text
               size={{ initial: '6', bp1: '7', bp2: '8', bp3: '9' }}
@@ -162,7 +398,7 @@ function Home() {
                 bp3: { marginBottom: 0 },
               }}
             >
-              System 500
+              Usual 500
             </Text>
             <Text
               size={{ initial: '6', bp1: '7', bp2: '8', bp3: '9' }}
@@ -175,7 +411,7 @@ function Home() {
                 bp3: { marginBottom: 0 },
               }}
             >
-              System 700
+              Usual 700
             </Text>
             <Text
               size={{ initial: '6', bp1: '7', bp2: '8', bp3: '9' }}
@@ -188,18 +424,18 @@ function Home() {
                 bp3: { marginBottom: 0 },
               }}
             >
-              System 800
+              Usual 800
             </Text>
             <Text
               size={{ initial: '6', bp1: '7', bp2: '8', bp3: '9' }}
-              weight="bold"
+              weight="regular"
               css={{
                 color: '$black',
                 whiteSpace: 'nowrap',
                 fontFamily: '$mono',
               }}
             >
-              Fira Code 400
+              Ballinger Mono
             </Text>
           </Flex>
         </Box>
@@ -255,7 +491,7 @@ function Home() {
 export default Home;
 
 const FontSize = ({ children, direction = 'left', ...props }) => (
-  <Box css={{ bc: '$hiContrast', mb: '1px' }}>
+  <Box css={{ bc: '$loContrast', mb: '1px' }}>
     <Box
       css={{
         textAlign: 'center',
@@ -270,6 +506,10 @@ const FontSize = ({ children, direction = 'left', ...props }) => (
           // lineHeight: '3em',
           fontFamily: props.family,
           whiteSpace: 'nowrap',
+          // Prevent text juddering in Safari
+          '& div': {
+            willChange: 'transform',
+          },
         }}
       >
         <Marquee direction={direction} speed={0.002} childMargin={4}>
@@ -292,7 +532,7 @@ const Space = (props) => (
   >
     <Box
       css={{
-        borderTop: '1px solid $hiContrast',
+        border: '1px solid $hiContrast',
         bc: '$loContrast',
         boxSizing: 'content-box',
         height: props.height,
@@ -312,8 +552,8 @@ const Alphabet = () => {
       css={{
         gridTemplateColumns: 'repeat(5, 1fr)',
         gap: '1px',
-        backgroundColor: '$loContrast',
-        border: '1px solid $loContrast',
+        backgroundColor: '$hiContrast',
+        border: '1px solid $hiContrast',
 
         bp2: {
           gridTemplateColumns: 'repeat(10, 1fr)',

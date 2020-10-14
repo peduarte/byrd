@@ -23,7 +23,7 @@ export const Input = styled.input({
   // Custom
   boxShadow: 'inset 0 0 0 1px $gray300',
   borderRadius: '$1',
-  color: '$hiContrast',
+  color: '$loContrast',
   p: '$1',
   fontSize: '$1',
   fontVariantNumeric: 'tabular-nums',

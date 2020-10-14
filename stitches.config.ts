@@ -3,23 +3,25 @@ import { createStyled } from '@stitches/react';
 export const theme = {
   breakpoints: ['575px', '750px', '1000px', '1200px'],
   colors: {
-    $loContrast: 'hsl(240, 5%, 8%)',
-    $hiContrast: 'hsl(0, 100%, 100%)',
+    $loContrast: 'hsl(0, 0%, 100%)',
+    $hiContrast: 'hsl(240, 5%, 8%)',
 
     $black: 'hsl(240, 5%, 8%)',
     $white: 'hsl(0, 100%, 100%)',
-    $gray: 'hsl(0, 0%, 50%)',
+    $gray: 'hsl(0, 0%, 80%)',
 
-    $pink: 'hsl(345, 66%, 73%)',
-    $blue: 'hsl(208, 98%, 50%)',
-    $turq: 'hsl(168, 100%, 48%)',
+    $pink: 'hsl(340, 90%, 72%)',
+    $blue: 'hsl(208, 90%, 50%)',
+    $turq: 'hsl(168, 80%, 48%)',
     $yellow: 'hsl(52, 100%, 50%)',
     $orange: 'hsl(28, 100%, 56%)',
-    $red: 'hsl(345, 95%, 52%)',
+    $red: 'hsl(345, 90%, 52%)',
+
+    $selection: 'hsla(168, 80%, 48%, 0.3)',
   },
   fonts: {
-    $sans: 'Inter,sans-serif',
-    $mono: 'Fira Mono,monospace',
+    $sans: 'usual, sans-serif',
+    $mono: 'ballinger-mono, Fira Mono, monospace',
   },
   fontSizes: {
     $1: '12px',
@@ -137,8 +139,8 @@ export const { styled, css } = createStyled({
 });
 
 export const darkTheme = {
-  $loContrast: 'hsl(0, 100%, 100%)',
-  $hiContrast: 'hsl(240, 5%, 8%)',
+  $hiContrast: 'hsl(0, 100%, 100%)',
+  $loContrast: 'hsl(240, 5%, 8%)',
 };
 
 export const darkThemeClass = css.theme({ colors: darkTheme });
