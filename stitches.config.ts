@@ -8,16 +8,14 @@ export const theme = {
 
     $black: 'hsl(240, 5%, 8%)',
     $white: 'hsl(0, 100%, 100%)',
-    $gray: 'hsl(0, 0%, 80%)',
+    $gray: 'hsl(0, 0%, 70%)',
 
-    $pink: 'hsl(340, 90%, 72%)',
-    $blue: 'hsl(208, 90%, 50%)',
-    $turq: 'hsl(168, 80%, 48%)',
+    $pink: 'hsl(340, 70%, 72%)',
+    $blue: 'hsl(215, 90%, 50%)',
+    $turq: 'hsl(168, 80%, 45%)',
     $yellow: 'hsl(52, 100%, 50%)',
     $orange: 'hsl(28, 100%, 56%)',
     $red: 'hsl(345, 90%, 52%)',
-
-    $selection: 'hsla(168, 80%, 48%, 0.3)',
   },
   fonts: {
     $sans: 'usual, sans-serif',
@@ -36,7 +34,7 @@ export const theme = {
   },
   lineHeights: {
     $1: '16px',
-    $2: '21px',
+    $2: '20px',
     $3: '24px',
     $4: '30px',
     $5: '36px',
@@ -141,6 +139,7 @@ export const { styled, css } = createStyled({
 export const darkTheme = {
   $hiContrast: 'hsl(0, 100%, 100%)',
   $loContrast: 'hsl(240, 5%, 8%)',
+  $gray: 'hsl(0, 0%, 40%)',
 };
 
 export const darkThemeClass = css.theme({ colors: darkTheme });

@@ -12,9 +12,6 @@ export const Text = styled('span', {
       regular: {
         fontWeight: 400,
       },
-      medium: {
-        fontWeight: 500,
-      },
       semibold: {
         fontWeight: 600,
       },

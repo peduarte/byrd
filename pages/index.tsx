@@ -2,6 +2,7 @@ import React from 'react';
 import { theme, styled, css } from '../stitches.config';
 import { Badge } from '../components/Badge';
 import { Box } from '../components/Box';
+import { Button } from '../components/Button';
 import { Card } from '../components/Card';
 import { Code } from '../components/Code';
 import { Container } from '../components/Container';
@@ -39,7 +40,6 @@ function Home() {
         <Text
           as="h1"
           size="4"
-          weight="medium"
           css={{
             mt: '$5',
             maxWidth: '320px',
@@ -61,23 +61,6 @@ function Home() {
         ))}
       </Grid>
 
-      <Section>
-        <Grid
-          css={{
-            alignItems: 'start',
-            justifyContent: 'start',
-            gridAutoFlow: 'column',
-            gap: '$2',
-          }}
-        >
-          <Badge>Funky</Badge>
-          <Badge variant="blue">Funky</Badge>
-          <Badge variant="green">Funky</Badge>
-          <Badge variant="red">Funky</Badge>
-          <Badge variant="yellow">Funky</Badge>
-        </Grid>
-      </Section>
-
       <Section
         css={{
           position: 'relative',
@@ -91,7 +74,7 @@ function Home() {
           css={{
             position: 'absolute',
             top: '7%',
-            left: '75%',
+            left: '5%',
           }}
         >
           Inspired by jazz
@@ -242,7 +225,7 @@ function Home() {
         />
       </Section>
 
-      <Section>
+      <Section css={{ my: '$4' }}>
         <Grid
           css={{
             gridTemplateColumns: 'repeat(3, 1fr)',
@@ -284,12 +267,52 @@ function Home() {
         </Grid>
       </Section>
 
-      <Section>
+      <Section css={{ my: '$4' }}>
+        <Grid
+          css={{
+            justifyContent: 'start',
+            gridAutoFlow: 'column',
+            gap: '$2',
+          }}
+        >
+          <Badge>Funky</Badge>
+          <Badge variant="blue">Funky</Badge>
+          <Badge variant="green">Funky</Badge>
+          <Badge variant="red">Funky</Badge>
+          <Badge variant="yellow">Funky</Badge>
+        </Grid>
+      </Section>
+
+      <Section css={{ my: '$4' }}>
         <Divider />
       </Section>
 
-      <Section>
-        <Input placeholder="yo" />
+      <Section css={{ my: '$4' }}>
+        <Grid
+          css={{
+            alignItems: 'start',
+            justifyContent: 'start',
+            gridAutoFlow: 'column',
+            gap: '$2',
+          }}
+        >
+          <Input size="medium" placeholder="Input" />
+          <Button size="medium">Sign up</Button>
+        </Grid>
+      </Section>
+
+      <Section css={{ my: '$4' }}>
+        <Grid
+          css={{
+            alignItems: 'start',
+            justifyContent: 'start',
+            gridAutoFlow: 'column',
+            gap: '$2',
+          }}
+        >
+          <Input size="large" placeholder="Input" />
+          <Button size="large">Sign up</Button>
+        </Grid>
       </Section>
 
       <Section
@@ -360,7 +383,7 @@ function Home() {
         >
           <Flex
             css={{
-              height: '100%',
+              height: '80%',
               flexDirection: 'column',
               justifyContent: 'space-between',
               padding: '$4',
@@ -386,19 +409,6 @@ function Home() {
               }}
             >
               Usual 400
-            </Text>
-            <Text
-              size={{ initial: '6', bp1: '7', bp2: '8', bp3: '9' }}
-              weight="medium"
-              css={{
-                color: '$black',
-                whiteSpace: 'nowrap',
-                marginBottom: '$4',
-                bp2: { marginBottom: '$5' },
-                bp3: { marginBottom: 0 },
-              }}
-            >
-              Usual 500
             </Text>
             <Text
               size={{ initial: '6', bp1: '7', bp2: '8', bp3: '9' }}
@@ -443,7 +453,7 @@ function Home() {
           css={{
             pt: '1px',
             overflow: 'hidden',
-            bc: '$turq',
+            bc: '$hiContrast',
 
             bp3: {
               width: '50vw',
@@ -451,35 +461,35 @@ function Home() {
           }}
         >
           <FontSize size="1">
-            Places and spaces I've been. Oh the places and spaces I've been. Down on the west-side.
+            Places and spaces I’ve been. Oh the places and spaces I’ve been. Down on the west-side.
             Where all the girls hide. All you have to do is east-side. What you gonna buy?
           </FontSize>
           <FontSize size="2" direction="left">
-            So come fly with me Cause we're flying high Flying high to the sky Flying high through
-            the sky Flying is our game It's like a high Soaring through the Clouds in the sky
+            Places and spaces I’ve been. Oh the places and spaces I’ve been. Down on the west-side.
+            Where all the girls hide. All you have to do is east-side. What you gonna buy?
           </FontSize>
           <FontSize size="3">
-            Places and spaces I've been. Oh the places and spaces I've been. Down on the west-side.
+            Places and spaces I’ve been. Oh the places and spaces I’ve been. Down on the west-side.
             Where all the girls hide. All you have to do is east-side. What you gonna buy?
           </FontSize>
           <FontSize size="4" direction="left">
-            Places and spaces I've been. Oh the places and spaces I've been. Down on the west-side.
+            Places and spaces I’ve been. Oh the places and spaces I’ve been. Down on the west-side.
             Where all the girls hide. All you have to do is east-side. What you gonna buy?
           </FontSize>
           <FontSize size="5">
-            Places and spaces I've been. Oh the places and spaces I've been. Down on the west-side.
+            Places and spaces I’ve been. Oh the places and spaces I’ve been. Down on the west-side.
             Where all the girls hide. All you have to do is east-side. What you gonna buy?
           </FontSize>
           <FontSize size="6" direction="left">
-            Places and spaces I've been. Oh the places and spaces I've been. Down on the west-side.
+            Places and spaces I’ve been. Oh the places and spaces I’ve been. Down on the west-side.
             Where all the girls hide. All you have to do is east-side. What you gonna buy?
           </FontSize>
           <FontSize size="7">
-            Places and spaces I've been. Oh the places and spaces I've been. Down on the west-side.
+            Places and spaces I’ve been. Oh the places and spaces I’ve been. Down on the west-side.
             Where all the girls hide. All you have to do is east-side. What you gonna buy?
           </FontSize>
           <FontSize size="8" direction="left">
-            Places and spaces I've been. Oh the places and spaces I've been. Down on the west-side.
+            Places and spaces I’ve been. Oh the places and spaces I’ve been. Down on the west-side.
             Where all the girls hide. All you have to do is east-side. What you gonna buy?
           </FontSize>
         </Box>
@@ -576,7 +586,7 @@ const LetterBox = (props) => {
   ].join();
 
   const getRadomLetter = () => letters[Math.floor(Math.random() * letters.length)];
-  const weights = ['regular', 'medium', 'semibold', 'bold'];
+  const weights = ['regular', 'semibold', 'bold'];
   const families = ['$sans', '$mono'];
 
   const [letter, setLetter] = React.useState(getRadomLetter());

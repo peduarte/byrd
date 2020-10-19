@@ -13,8 +13,7 @@ export const Link = styled.a({
   transition: 'all 50ms linear',
 
   ':hover': {
-    color: '$gray',
-    borderColor: '$gray',
+    borderColor: 'currentColor',
   },
 
   variants: {

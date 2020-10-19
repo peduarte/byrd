@@ -6,7 +6,7 @@ export const Divider = styled.div({
   flexShrink: 0,
 
   height: '1px',
-  backgroundColor: '$gray300',
+  backgroundColor: '$gray',
   borderRadius: '$1',
   width: '$3',
 

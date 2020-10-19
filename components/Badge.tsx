@@ -4,11 +4,9 @@ export const Badge = styled.span({
   // Reset
   alignItems: 'center',
   appearance: 'none',
-  borderWidth: '0',
   boxSizing: 'border-box',
   display: 'inline-flex',
   flexShrink: 0,
-  fontFamily: 'inherit',
   justifyContent: 'center',
   lineHeight: '1',
   outline: 'none',
@@ -27,12 +25,12 @@ export const Badge = styled.span({
   },
 
   // Custom
-  backgroundColor: '$gray',
-  borderRadius: '$round',
-  color: '$gray600',
-  height: '$3',
-  px: '$1',
+  border: '1px solid $black',
+  fontFamily: '$mono',
+  fontWeight: '500',
   fontSize: '$1',
+  height: '$4',
+  px: '$2',
   whiteSpace: 'nowrap',
 
   variants: {
@@ -44,6 +42,10 @@ export const Badge = styled.span({
       },
     },
     variant: {
+      gray: {
+        backgroundColor: '$gray',
+        color: '$hiContrast',
+      },
       blue: {
         backgroundColor: '$blue',
         color: '$white',
@@ -63,3 +65,7 @@ export const Badge = styled.span({
     },
   },
 });
+
+Badge.defaultProps = {
+  variant: 'gray',
+};

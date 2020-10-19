@@ -12,12 +12,12 @@ export const Card = styled.div({
   variants: {
     variant: {
       light: {
-        backgroundColor: '$white',
-        border: '1px solid $black',
+        backgroundColor: '$loContrast',
+        border: '1px solid $gray',
       },
       dark: {
-        backgroundColor: '$black',
-        border: '1px solid $white',
+        backgroundColor: '$hiContrast',
+        border: '1px solid $gray',
       },
     },
   },
