@@ -1,9 +1,8 @@
 import { styled } from '../stitches.config';
 
-export const Input = styled.input({
+export const Button = styled.button({
   // Reset
   appearance: 'none',
-  backgroundColor: 'transparent',
   borderWidth: '0',
   boxSizing: 'border-box',
   flexShrink: 0,
@@ -15,50 +14,45 @@ export const Input = styled.input({
   // Custom
   borderRadius: '$2',
   boxShadow: 'inset 0 0 0 1px $hiContrast',
-  color: '$hiContrast',
-  fontFamily: '$mono',
+  // fontFamily: '$mono',
+  fontWeight: '600',
   ':focus': {
     boxShadow: '$blue 0px 0px 0px 1px inset, $blue 0px 0px 0px 1px',
-  },
-  ':read-only': {
-    color: '$gray',
   },
   ':disabled': {
     pointerEvents: 'none',
     color: '$gray',
     cursor: 'not-allowed',
   },
-  '::selection': {
-    backgroundColor: 'hsla(220, 100%, 85%)',
+
+  backgroundColor: '$blue',
+  color: '$white',
+  cursor: 'pointer',
+
+  ':hover': {
+    opacity: 0.9,
+  },
+
+  ':active': {
+    opacity: 0.8,
   },
 
   variants: {
     size: {
       medium: {
-        px: '$2',
+        px: '$3',
         height: '$4',
         fontSize: '$2',
       },
       large: {
-        px: '$3',
+        px: '$4',
         height: '$5',
         fontSize: '$3',
-      },
-    },
-    variant: {
-      ghost: {
-        boxShadow: 'none',
-        ':hover': {
-          boxShadow: 'inset 0 0 0 1px $hiContrast',
-        },
-        ':focus': {
-          boxShadow: '$blue 0px 0px 0px 1px inset, $blue 0px 0px 0px 1px',
-        },
       },
     },
   },
 });
 
-Input.defaultProps = {
+Button.defaultProps = {
   size: 'medium',
 };

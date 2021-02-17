@@ -6,6 +6,23 @@ export const Card = styled.div({
   flexShrink: 0,
 
   // Custom
-  border: '1px solid $gray400',
   borderRadius: '$2',
+  padding: '$4 $4',
+
+  variants: {
+    variant: {
+      light: {
+        backgroundColor: '$loContrast',
+        border: '1px solid $gray',
+      },
+      dark: {
+        backgroundColor: '$hiContrast',
+        border: '1px solid $gray',
+      },
+    },
+  },
 });
+
+Card.defaultProps = {
+  variant: 'light',
+};

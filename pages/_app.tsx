@@ -9,7 +9,10 @@ const globalStyles = css.global({
   body: {
     margin: 0,
     fontFamily: '$sans',
-    backgroundColor: '$hiContrast',
+    backgroundColor: '$loContrast',
+  },
+  '::selection': {
+    backgroundColor: '$yellow',
   },
   '*': {
     boxSizing: 'border-box',
@@ -44,7 +47,8 @@ function App({ Component, pageProps }) {
   return (
     <div>
       <Head>
-        <title>Byrd - Design System</title>
+        <title>Byrd – Design System</title>
+        <link rel="stylesheet" href="https://use.typekit.net/tpj5yvs.css" />
         <link
           href="https://fonts.googleapis.com/css?family=Inter:400,500,600,700&display=swap"
           rel="stylesheet"
